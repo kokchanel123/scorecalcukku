@@ -1,0 +1,400 @@
+#:kivy 2.3.0
+<ScreenManagerCustom>:
+    Screen:
+        name: "facultyscreen"
+        #ScrollView:
+            #size_hint: 1, 1
+            #do_scroll_x: False
+            #do_scroll_y: True
+        BoxLayout:
+            orientation: 'vertical'
+            padding: 10
+            spacing: 10
+            #size_hint_y: None
+            #height: self.minimum_height + 800
+            Label:
+                text: "คำนวณเกณฑ์คะเเนนNETSAT"
+                font_name: "font/THSarabunNew.ttf"
+                font_size: 32
+                bold: True
+                pos: (100,300)
+            Label:
+                text:"คณะ"
+                font_name: "font/THSarabunNew.ttf"
+                font_size: 30
+                size_hint_y: None
+                height: 50
+            Spinner:
+                id: choosefaculty
+                text: "เลือกคณะ"
+                values: ["วิทยาการคอม","วิศวกรรมศาสตร์" ] 
+                size_hint_y: None
+                height: 50
+                font_name: "font/THSarabunNew.ttf"
+                font_size: 30
+                option_cls: "CSO"
+            Button:
+                text:"ต่อไป"
+                font_name: "font/THSarabunNew.ttf"
+                font_size: 30
+                size_hint_y: None
+                height: 50
+                on_press: root.facultychoose()   
+
+    #สาขาวิทยาการคอม
+    Screen:
+        name: "branchcomputerscience"
+        BoxLayout:
+            orientation: 'vertical'
+            padding: 10
+            spacing: 10
+            Label:
+                text:"สาขา"
+                font_name: "font/THSarabunNew.ttf"
+                font_size: 30
+                size_hint_y: None
+                height: 50
+            Spinner:
+                id: choosebranch
+                text: "เลือกสาขาวิทยาการคอม"
+                values: ["วิทยาการคอม","ปัญญาประดิษฐ์","ภูมิสารสนเทศศาสตร์","ความมั่นคงปลอดภัยทางไซเบอร์","เทคโนโลยีสารสนเทศ"]
+                size_hint_y: None
+                height: 50  
+                font_name: "font/THSarabunNew.ttf"
+                font_size: 30
+                option_cls: "CSO"
+            Button:
+                text:"ต่อไป"
+                font_name: "font/THSarabunNew.ttf"
+                font_size: 30
+                size_hint_y: None
+                height: 50
+                on_press:  root.checkbranch(); 
+
+    Screen:
+        name: "nolmalspac"
+        BoxLayout:
+            orientation: 'vertical'
+            padding: 10 
+            spacing: 10
+            Label:
+                text:"เลือกภาคปกติหรือพิเศษ"
+                font_name: "font/THSarabunNew.ttf"
+                font_size: 30
+                size_hint_y: None
+                height: 50
+            Spinner:
+                id: chooseNS
+                text: "เลือกสาขาวิศวกรรม"
+                values: ["พิเศษ","ปกติ"]
+                size_hint_y: None
+                height: 50  
+                font_name: "font/THSarabunNew.ttf"
+                font_size: 30
+                option_cls: "CSO"
+            Button:
+                text:"ต่อไป"
+                font_name: "font/THSarabunNew.ttf"
+                font_size: 30
+                size_hint_y: None
+                height: 50
+                on_press:  root.facultychoose(); 
+
+    #สาขาวิศวะภาคปกติ
+    Screen:
+        name: "branchcomputeregineerA"
+        BoxLayout:
+            orientation: 'vertical'
+            padding: 10
+            spacing: 10
+            Label:
+                text:"สาขา"
+                font_name: "font/THSarabunNew.ttf"
+                font_size: 30
+                size_hint_y: None
+                height: 50
+            Spinner:
+                id: choosebranch1
+                text: "เลือกสาขาวิศวกรรม"
+                values: ["วิศวกรรมเกษตร","วิศวกรรมคอมพิวเตอร์","วิศวกรรมเคมี","วิศวกรรมเครื่องกล","วิศวกรรมไฟฟ้า","วิศวกรรมโยธา","วิศวกรรมปัญญาประดิษฐ์","วิศวกรรมระบบอิเล็กทรอนิกส์", "วิศวกรรมสิ่งเเวดล้อม","วิศวกรรมอุตสาหการ"]
+                size_hint_y: None
+                height: 50  
+                font_name: "font/THSarabunNew.ttf"
+                font_size: 30
+                option_cls: "CSO"
+            Button:
+                text:"ต่อไป"
+                font_name: "font/THSarabunNew.ttf"
+                font_size: 30
+                size_hint_y: None
+                height: 50
+                on_press:  root.checkbranch(); 
+    #สาขาวิศวะภาคพืเศษ
+    Screen:
+        name: "branchcomputeregineerB"
+        BoxLayout:
+            orientation: 'vertical'
+            padding: 10
+            spacing: 10
+            Label:
+                text:"สาขา"
+                font_name: "font/THSarabunNew.ttf"
+                font_size: 30
+                size_hint_y: None
+                height: 50
+            Spinner:
+                id: choosebranch2
+                text: "เลือกสาขาวิศวกรรม"
+                values: ["วิศวกรรมกระบวนการทางเคมี","วิศวกรรมโทรคมนาคม","วิศวกรรมโลจิสติกส์","วิศวกรรมสื่อดิจิทัล"]
+                size_hint_y: None
+                height: 50  
+                font_name: "font/THSarabunNew.ttf"
+                font_size: 30
+                option_cls: "CSO"
+            Button:
+                text:"ต่อไป"
+                font_name: "font/THSarabunNew.ttf"
+                font_size: 30
+                size_hint_y: None
+                height: 50
+                on_press:  root.checkbranch(); 
+        
+
+    Screen:
+        name: "score"
+        ScrollView:
+            size_hint: 1, 1
+            do_scroll_x: False
+            do_scroll_y: True
+            BoxLayout:
+                orientation: 'vertical'
+                padding: 10
+                spacing: 10
+                size_hint_y: None
+                height: self.minimum_height + 700
+                Label:
+                    id: labelmath
+                    text: "คณิต"
+                    font_name: "font/THSarabunNew.ttf"
+                    font_size:30
+                TextInput:
+                    id: scoremath
+                    hint_text: "กรอกคะเเนน"
+                    font_name: "font/THSarabunNew.ttf"
+                    font_size: 30
+                    multiline: False
+                    height:50
+                    input_filter: "float" 
+                    on_text: root.textinput4(self)
+                Label:
+                    id: labelthai
+                    text: "ไทย"
+                    font_name: "font/THSarabunNew.ttf"
+                    font_size:30
+                TextInput:
+                    id: scorethai
+                    hint_text: "กรอกคะเเนน"
+                    font_name: "font/THSarabunNew.ttf"
+                    font_size: 30
+                    multiline: False
+                    height:50
+                    input_filter: "float" 
+                    on_text: root.textinput4(self)
+                Label:
+                    id: labeleng
+                    text: "อังกฤษ"
+                    font_name: "font/THSarabunNew.ttf"
+                    font_size:30
+                TextInput:
+                    id: scoreeng
+                    hint_text: "กรอกคะเเนน"
+                    font_name: "font/THSarabunNew.ttf"
+                    font_size: 30
+                    multiline: False
+                    height:50
+                    input_filter: "float"
+                    on_text: root.textinput4(self)
+                Label:
+                    id:labeltech
+                    text: "วิทย์เทคโน"
+                    font_name: "font/THSarabunNew.ttf"
+                    font_size:30
+                TextInput:
+                    id: scoretech
+                    hint_text: "กรอกคะเเนน"
+                    font_name: "font/THSarabunNew.ttf"
+                    font_size: 30
+                    multiline: False
+                    height:50
+                    input_filter: "float"
+                    on_text: root.textinput4(self)
+                Label:
+                    id:labelphy
+                    text: "ฟิสิกส์"
+                    font_name: "font/THSarabunNew.ttf"
+                    font_size:30
+                TextInput:
+                    id: scorephy
+                    hint_text: "กรอกคะเเนน"
+                    font_name: "font/THSarabunNew.ttf"
+                    font_size: 30
+                    multiline: False
+                    height:50
+                    input_filter: "float" 
+                    on_text: root.textinput4(self)
+                Label:
+                    id: labelche
+                    text: "เคมี"
+                    font_name: "font/THSarabunNew.ttf"
+                    font_size:30
+                TextInput:
+                    id: scoreche
+                    hint_text: "กรอกคะเเนน"
+                    font_name: "font/THSarabunNew.ttf"
+                    font_size: 30
+                    multiline: False
+                    height:50
+                    input_filter: "float" 
+                    on_text: root.textinput4(self)
+                Label:
+                    id:labelbio
+                    text: "ชีวะ"
+                    font_name: "font/THSarabunNew.ttf"
+                    font_size:30
+                TextInput:
+                    id: scorebio
+                    hint_text: "กรอกคะเเนน"
+                    font_name: "font/THSarabunNew.ttf"
+                    font_size: 30
+                    multiline: False
+                    height: 0
+                    height:50
+                    input_filter: "float" 
+                    on_text: root.textinput4(self)
+                Label:
+                    id:labeltpat3
+                    text: "TPAT3 ความถนัดทางวิทย์"
+                    font_name: "font/THSarabunNew.ttf"
+                    font_size:30
+                TextInput:
+                    id: scoretpat3
+                    hint_text: "กรอกคะเเนน"
+                    font_name: "font/THSarabunNew.ttf"
+                    font_size: 30
+                    multiline: False
+                    height: 0
+                    height:50
+                    input_filter: "float" 
+                    on_text: root.textinput4(self)
+                Button:
+                    text:"ต่อไป"
+                    font_name: "font/THSarabunNew.ttf"
+                    font_size: 30
+                    size_hint_y:None
+                    height: 50
+                    background_color: (0.2,0.6,1,1)
+                    on_press: root.current = "showscore";root.branchchoose()
+    Screen:
+        name: "showscore"
+        ScrollView:
+            size_hint: 1, 1
+            do_scroll_y: True
+            do_scroll_x: False
+            BoxLayout:
+                orientation: 'vertical'
+                padding: 10
+                spacing: 10
+                size_hint_y: None
+                height: self.minimum_height +700
+                Label:
+                    text: "คะเเนนคณิต"
+                    font_name: "font/THSarabunNew.ttf"
+                    font_size: 40
+                Label:
+                    id: showscoremath
+                    text: "ไม่ได้ใช้"
+                    font_name: "font/THSarabunNew.ttf"
+                    font_size: 30
+                Label:
+                    text: "คะเเนนไทย"
+                    font_name: "font/THSarabunNew.ttf"
+                    font_size: 40
+                Label:
+                    id: showscorethai
+                    text: "ไม่ได้ใช้" 
+                    font_name: "font/THSarabunNew.ttf"
+                    font_size: 30
+                    
+                Label:
+                    text: "คะเเนนอังกฤษ"
+                    font_name: "font/THSarabunNew.ttf"
+                    font_size: 40
+                Label:
+                    id: showscoreeng
+                    text: "ไม่ได้ใช้"
+                    font_name: "font/THSarabunNew.ttf"
+                    font_size: 30
+
+                Label:
+                    text: "คะเเนนวิทย์เทคโน"
+                    font_name: "font/THSarabunNew.ttf"
+                    font_size: 40
+                Label:
+                    id: showscoretech
+                    text: "ไม่ได้ใช้"
+                    font_name: "font/THSarabunNew.ttf"
+                    font_size: 30
+
+                Label:
+                    text: "คะเเนนฟิสิกส์"
+                    font_name: "font/THSarabunNew.ttf"
+                    font_size: 40
+                Label:
+                    id: showscorephy
+                    text: "ไม่ได้ใช้"
+                    font_name: "font/THSarabunNew.ttf"
+                    font_size: 30
+
+                Label:
+                    text: "คะเเนนเคมี"
+                    font_name: "font/THSarabunNew.ttf"
+                    font_size: 40
+                Label:
+                    id: showscoreche
+                    text: "ไม่ได้ใช้"
+                    font_name: "font/THSarabunNew.ttf"
+                    font_size: 30
+
+                Label:
+                    text: "คะเเนนชีวะ"
+                    font_name: "font/THSarabunNew.ttf"
+                    font_size: 40
+                Label:
+                    id: showscorebio
+                    text: "ไม่ได้ใช้"
+                    font_name: "font/THSarabunNew.ttf"
+                    font_size: 30
+                Label:
+                    text: "คะเเนนTPAT3"
+                    font_name: "font/THSarabunNew.ttf"
+                    font_size: 40
+                Label:
+                    id: showscoretpat3
+                    text: "ไม่ได้ใช้"
+                    font_name: "font/THSarabunNew.ttf"
+                    font_size: 30
+                Label:
+                    id: showscoresum
+                    text: "คำนวณคะเเนนสักครู"
+                    font_name: "font/THSarabunNew.ttf"
+                    font_size: 40
+                Button:
+                    text:"หน้าเริ่มต้น"
+                    font_name: "font/THSarabunNew.ttf"
+                    font_size: 40
+                    size_hint_y: None
+                    height: 30
+                    on_press: app.root.current = "facultyscreen"
+
+            
+
